@@ -1,21 +1,31 @@
-let num=[-1,0,3,5,9,10];
 
-function BinarySearch(nums,target){
-    let start = 0;
-    let end = num.length-1
-    while(start<=end){
-        let mid =Math.floor((start+end)/2);
-        if (nums[mid]===target) {
-            return mid;
-        }
-        else if(nums[mid] < target){
-            start=mid+1;
-            
-        }else{
-            end=mid-1
-        }
-    }
-    return -1
+//brute force tehnique............
+
+// let arr=[10,20,30,40,50,60,70,80,90];
+
+// for (let i = 0; i < arr.length; i++) {
+
+
+//     for (let j = 0; j < i; j++) {
+//         let temp=arr[i]
+//         arr[i]=arr[j];
+//         arr[j]=temp;
+        
+//     }
+    
+// }
+// console.log(arr);
+
+//............two pointer approch...............
+
+arr=[10,20,30,40,50,60,70,80,90];
+
+let last=arr.length-1;
+for(let i=0,j=last; i<j; i++,j--){
+    let temp=arr[i]
+    arr[i]=arr[j];
+    arr[j]=temp;
 }
+console.log(arr);
 
-console.log(BinarySearch(num,-1));
+
